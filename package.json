@@ -9,7 +9,8 @@
     "test": "jest --coverage",
     "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
     "prepare": "husky install",
-    "commit": "git add . && git commit -m 'chore: init local env'"
+    "commit": "git add . && git commit -m 'chore: init local env'",
+    "ci": "run-s lint test build"
   },
   "keywords": [],
   "author": "wy <631824375@qq.com>",
