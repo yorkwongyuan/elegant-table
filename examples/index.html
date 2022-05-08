@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <svg>
+      <rect id="element" x="0" y="0" width="300" height="300" fill="red" transform="rotate(23) scale(2)"></rect>
+    </svg>
+  </div>
+</body>
+<script src="../dist/elegant.min.js"></script>
+<script>
+  window.onload =function () {
+    // 创建渲染器
+    const renderer = window.sp.createRenderer(600, 400);
+    function getAttributes(node, attributes) {
+      console.log('🚀 ~ file: index.html ~ line 22 ~ getAttributes ~ attributes', attributes)
+      console.log('🚀 ~ file: index.html ~ line 22 ~ getAttributes ~ node', node)
+      console.log(attributes.reduce((obj, key) => (obj[key] = node.getAttribute(key), obj), {}), '111')
+      return attributes.reduce((obj, key) => (obj[key] = node.getAttribute(key), obj), {});
+    }
+    // // 绘制基本图形 
+    const res = renderer.circle({
+      cx: '100',
+      cy: '100',
+      r: '40',
+      fill: 'red',
+      stroke: 'yellow',
+      strokeWidth: 10,
+    });
+    
+    getAttributes(res, ['cx', 'cy', 'r', 'fill', 'stroke', 'stroke-width'])
+    // console.log(res, 'result ')
+    // // 坐标变换 
+    // renderer.save(); 
+    // renderer.scale(2, 2); 
+    // renderer.rect({ 
+    //   x: 10, 
+    //   y: 10, 
+    //   width: 50, 
+    //   height: 50 
+    // }); 
+    // renderer.restore();
+  }
+</script>
+</html>

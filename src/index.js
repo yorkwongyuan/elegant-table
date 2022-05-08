@@ -1,2 +1,1 @@
-export { drawRect } from './drawRect';
-console.log('1255553');
+export { createRenderer } from './renderer/index';
